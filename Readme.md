@@ -62,10 +62,13 @@ app.use((err,req,res,next) => {
 
 - Why is `express.Router()` used in Express.js applications, and how does it benefit the code structure?
 
+- Answer: express.Router() is a built-in method in Express.js that allows you to create modular, mountable route handlers. It acts as a mini Express application without all the overhead of starting a new app. Benefits: modularity, maintainability, middleware application, reusability
+
 **7. Error Handling in Express.js**
 
 - How would you implement error handling in the Express routes to ensure that any issues (such as file not found or server errors) are appropriately handled? Provide an example.
 
+- In Express.js, error handling is implemented using middleware functions that have four arguments: (err, req, res, next). You can use these functions to catch and handle errors throughout your application.
 ---
 
 #### Section C: Bonus

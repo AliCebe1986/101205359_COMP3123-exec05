@@ -10,6 +10,7 @@
   "author": "Pritesh Patel - Exercise Lab 05",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.3",
     "express": "^4.17.1"
   }
 }
