@@ -68,7 +68,26 @@ app.use((err,req,res,next) => {
 
 - How would you implement error handling in the Express routes to ensure that any issues (such as file not found or server errors) are appropriately handled? Provide an example.
 
-- In Express.js, error handling is implemented using middleware functions that have four arguments: (err, req, res, next). You can use these functions to catch and handle errors throughout your application.
+- Answer: In Express.js, error handling is implemented using middleware functions that have four arguments: (err, req, res, next). You can use these functions to catch and handle errors throughout your application.
+
+Error Handling Middleware:
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+});
+
+Invoke the Error Handler in Routes
+In routes, when an error occurs, pass it to the next() function.
+
+app.get('/data', (req, res, next) => {
+    fs.readFile('data.json', (err, data) => {
+        if (err) {
+            return next(err);
+        }
+        res.json(JSON.parse(data));
+    });
+});
 ---
 
 #### Section C: Bonus
